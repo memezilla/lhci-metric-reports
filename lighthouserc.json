@@ -1,0 +1,15 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 3,
+      "url": [
+        "https://www.daily-harvest.com/",
+        "https://www.daily-harvest.com/app/browse/smoothies"
+      ]
+    },
+    "upload": {
+      "target": "lhci",
+      "serverBaseUrl": "http://www.memezilla.com:9001"
+    }
+  }
+}
