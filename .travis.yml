@@ -8,10 +8,4 @@ script:
   - lhci autorun --upload.token="$LHCI_UPLOAD__TOKEN" # run lighthouse CI
 env:
   global:
-    - LHCI_BUILD_CONTEXT__CURRENT_HASH: $(node -e "new Date().getTime().toString(16).split('').reverse().join('')")
-    - LHCI_BUILD_CONTEXT__COMMIT_TIME: $(date --iso-8601=seconds)
-    - LHCI_BUILD_CONTEXT__CURRENT_BRANCH: master
-    - LHCI_BUILD_CONTEXT__COMMIT_MESSAGE: "Periodic run "
-    - LHCI_BUILD_CONTEXT__AUTHOR: "No one <noreply@memezilla.com>"
-    - LHCI_BUILD_CONTEXT__AVATAR_URL: "https://picsum.photos/id/870/200/200"
     - secure: "FyHvEZYVrvp1Q+IrCF9iqV5yaxvbQvYIjBNGj5KzXrsd+NICO4UM7xo787oa6tXP3f2BUQnP1qDFswQYPWwYYyLYM6/WJznWJoEsC6OUXs/9+LvnCVlWpdMtfoHr2YRcx91qe+kTaIkZYtESajDw/o2EZJV9/GDka/OpRc7bUVLVBS53OvZDxHzci39nnusNOK48Wp6Wohs2AzNcNoarF863LpI3nNcb7gPXGVicBTiKevt87wYRBJNQNRHyIt7gld621ToeJZs38r9QeF2+LyizqDWL4d4ZJzTlQEKnYBaoJU04nLq94+sNYoWWwnF0pBFRi+VWH8JoEwS8gDWLRTI7y1E8RTjRpR6wAIsVtEWMA0M78PpV0LOBOe2VWtG5v8rZvibbIdiKLQhULdt2y9lvGjHTLy4PkN9UhE4ivdRdtKbWAeaGbeSYcfrMV4Bb28sKDId1+fl8p6RTEDd7mq95ZP6+/9ohuUq7cdQOp6tRpacmSUcgNfMVsQBHwk76IDygSpaTkzB+G88+8LBI6HsFU1ve3PInNzdESrv6+sz8suN31T+frKo0Kb+9qUngsdKhSioc11xigR007wVRPrLGUOBI9tytHsGzuOiTYCGXI6o3d3lLwli8FOFIah+SBnhBEzcWmHKo/5wQprWz/sEMwwCKjxmrhyXhpWSdFxE="
