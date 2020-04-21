@@ -1,4 +1,4 @@
-DH Metric Reports
+Lighthouse Metric Reports
 =====
 
 Track performance metrics and [Lighthouse](https://github.com/GoogleChrome/lighthouse-ci) scores over time.
