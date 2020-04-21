@@ -5,8 +5,13 @@ addons:
 before_install:
   - npm install -g @lhci/cli@0.3.x
 script:
-  - lhci autorun
-  - lhci upload --serverBaseUrl="$LHCI_SERVER_URL" --token="$LHCI_SERVER_TOKEN"
+  - export LHCI_BUILD_CONTEXT__CURRENT_HASH=$(node -e "new Date().getTime().toString(16).split('').reverse().join('')")
+  - export LHCI_BUILD_CONTEXT__COMMIT_TIME=$(date --iso-8601=seconds)
+  - export LHCI_BUILD_CONTEXT__CURRENT_BRANCH=master
+  - export LHCI_BUILD_CONTEXT__COMMIT_MESSAGE="Periodic run "
+  - export LHCI_BUILD_CONTEXT__AUTHOR="No one <noreply@memezilla.com>"
+  - export LHCI_BUILD_CONTEXT__AVATAR_URL="https://picsum.photos/id/870/200/200"
+  - lhci autorun --upload.token="$LHCI_UPLOAD__TOKEN" # run lighthouse CI
 env:
   global:
     secure: "FyHvEZYVrvp1Q+IrCF9iqV5yaxvbQvYIjBNGj5KzXrsd+NICO4UM7xo787oa6tXP3f2BUQnP1qDFswQYPWwYYyLYM6/WJznWJoEsC6OUXs/9+LvnCVlWpdMtfoHr2YRcx91qe+kTaIkZYtESajDw/o2EZJV9/GDka/OpRc7bUVLVBS53OvZDxHzci39nnusNOK48Wp6Wohs2AzNcNoarF863LpI3nNcb7gPXGVicBTiKevt87wYRBJNQNRHyIt7gld621ToeJZs38r9QeF2+LyizqDWL4d4ZJzTlQEKnYBaoJU04nLq94+sNYoWWwnF0pBFRi+VWH8JoEwS8gDWLRTI7y1E8RTjRpR6wAIsVtEWMA0M78PpV0LOBOe2VWtG5v8rZvibbIdiKLQhULdt2y9lvGjHTLy4PkN9UhE4ivdRdtKbWAeaGbeSYcfrMV4Bb28sKDId1+fl8p6RTEDd7mq95ZP6+/9ohuUq7cdQOp6tRpacmSUcgNfMVsQBHwk76IDygSpaTkzB+G88+8LBI6HsFU1ve3PInNzdESrv6+sz8suN31T+frKo0Kb+9qUngsdKhSioc11xigR007wVRPrLGUOBI9tytHsGzuOiTYCGXI6o3d3lLwli8FOFIah+SBnhBEzcWmHKo/5wQprWz/sEMwwCKjxmrhyXhpWSdFxE="
