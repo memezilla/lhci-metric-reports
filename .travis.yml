@@ -5,7 +5,12 @@ addons:
 before_install:
   - npm install -g @lhci/cli@0.3.x
 script:
-  - source ./lhci.sh
+  - export LHCI_BUILD_CONTEXT__CURRENT_HASH=$(head -n 4096 /dev/urandom | openssl sha1)
+  - export LHCI_BUILD_CONTEXT__COMMIT_TIME=$(date +%Y-%m-%dT%H:%M:%S%z)
+  - export LHCI_BUILD_CONTEXT__CURRENT_BRANCH=master
+  - export LHCI_BUILD_CONTEXT__COMMIT_MESSAGE="Periodic run"
+  - export LHCI_BUILD_CONTEXT__AUTHOR="No one <noreply@memezilla.com>"
+  - export LHCI_BUILD_CONTEXT__AVATAR_URL="https://picsum.photos/id/870/200/200"
   - lhci autorun --upload.token="$LHCI_UPLOAD__TOKEN" # run lighthouse CI
 env:
   global:
