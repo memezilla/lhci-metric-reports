@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "numberOfRuns": 3,
+      "numberOfRuns": 1,
       "url": [
         "https://www.facebook.com/",
         "https://www.twitter.com/"
@@ -9,7 +9,8 @@
     },
     "upload": {
       "target": "lhci",
-      "serverBaseUrl": "http://www.memezilla.com:9001"
+      "serverBaseUrl": "http://www.memezilla.com:9001",
+      "token": "60caf3c0-ed59-4c4a-8ed9-4ade3e4c2512"
     }
   }
 }
