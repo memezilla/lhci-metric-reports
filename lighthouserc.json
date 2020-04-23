@@ -7,7 +7,7 @@
         "https://www.twitter.com/"
       ],
       "settings": {
-        "configPath": "./path/to/lighthouse/config.js",
+        "configPath": "./custom-config.js",
         "plugins": ["lighthouse-plugin-field-performance"]
       }
     },
