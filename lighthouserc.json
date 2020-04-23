@@ -5,7 +5,11 @@
       "url": [
         "https://www.facebook.com/",
         "https://www.twitter.com/"
-      ]
+      ],
+      "settings": {
+        "configPath": "./path/to/lighthouse/config.js",
+        "plugins": ["lighthouse-plugin-field-performance"]
+      }
     },
     "upload": {
       "target": "lhci",
