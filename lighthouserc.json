@@ -2,10 +2,7 @@
   "ci": {
     "collect": {
       "numberOfRuns": 1,
-      "url": [
-        "https://www.facebook.com/",
-        "https://www.twitter.com/"
-      ],
+      "url": ["https://www.facebook.com/", "https://www.twitter.com/"],
       "settings": {
         "configPath": "./custom-config.js",
         "plugins": ["lighthouse-plugin-field-performance"]
@@ -13,7 +10,7 @@
     },
     "upload": {
       "target": "lhci",
-      "serverBaseUrl": "http://www.memezilla.com:9001",
+      "serverBaseUrl": "https://infinite-mountain-93163.herokuapp.com/",
       "token": ""
     }
   }
